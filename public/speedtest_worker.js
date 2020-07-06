@@ -45,10 +45,10 @@ var settings = {
 	time_ulGraceTime: 3, //time to wait in seconds before actually measuring ul speed (wait for buffers to fill)
 	time_dlGraceTime: 1.5, //time to wait in seconds before actually measuring dl speed (wait for TCP window to increase)
 	count_ping: 10, // number of pings to perform in ping test
-	url_dl: "https://oom3gsig9a.execute-api.us-east-1.amazonaws.com/dev/testAPI/garbage", // path to a large file or garbage.php, used for download test. must be relative to this js file
-	url_ul: "https://oom3gsig9a.execute-api.us-east-1.amazonaws.com/dev/testAPI/empty", // path to an empty file, used for upload test. must be relative to this js file
-	url_ping: "https://oom3gsig9a.execute-api.us-east-1.amazonaws.com/dev/testAPI/empty", // path to an empty file, used for ping test. must be relative to this js file
-	url_getIp: "https://oom3gsig9a.execute-api.us-east-1.amazonaws.com/dev/testAPI/getIP", // path to getIP.php relative to this js file, or a similar thing that outputs the client's ip
+	url_dl: "https://speedapia.herokuapp.com/testAPI/garbage", // path to a large file or garbage.php, used for download test. must be relative to this js file
+	url_ul: "https://speedapia.herokuapp.com/testAPI/empty", // path to an empty file, used for upload test. must be relative to this js file
+	url_ping: "https://speedapia.herokuapp.com/testAPI/empty", // path to an empty file, used for ping test. must be relative to this js file
+	url_getIp: "https://speedapia.herokuapp.com/testAPI/getIP", // path to getIP.php relative to this js file, or a similar thing that outputs the client's ip
 	getIp_ispInfo: true, //if set to true, the server will include ISP info with the IP address
 	getIp_ispInfo_distance: "km", //km or mi=estimate distance from server in km/mi; set to false to disable distance estimation. getIp_ispInfo must be enabled in order for this to work
 	xhr_dlMultistream: 6, // number of download streams to use (can be different if enable_quirks is active)
