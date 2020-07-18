@@ -23,7 +23,29 @@
        function I(i){return document.getElementById(i);}
       //INITIALIZE SPEEDTEST
       var s=new Speedtest(); //create speedtest object
-    
+                var dataset; 
+fetch('https://ipinfo.io/json') 
+    .then(response => response.json()) 
+    .then(data => {
+  dataset = data;
+        logDataset(); 
+});  
+
+function logDataset () { 
+  var a= dataset.country; 
+  if(a=='IN')
+ {
+  s.setParameter("url_dl","https://tr593xqwkd.execute-api.ap-south-1.amazonaws.com/dev/garbage");
+  s.setParameter("url_ul","https://tr593xqwkd.execute-api.ap-south-1.amazonaws.com/dev/empty");
+  s.setParameter("url_ping","54.192.183.73");
+  s.setParameter("url_getIp","https://tr593xqwkd.execute-api.ap-south-1.amazonaws.com/dev/getIP");
+ }else{
+  s.setParameter("url_dl","https://nqz63bd9rb.execute-api.us-east-1.amazonaws.com/dev/garbage");
+  s.setParameter("url_ul","https://nqz63bd9rb.execute-api.us-east-1.amazonaws.com/dev/empty");
+  s.setParameter("url_ping","54.192.183.101");
+  s.setParameter("url_getIp","https://nqz63bd9rb.execute-api.us-east-1.amazonaws.com/dev/getIP");
+ }
+}
       
       function mbpsToAmount(s){
         return 1-(1/(Math.pow(1.3,Math.sqrt(s))));
